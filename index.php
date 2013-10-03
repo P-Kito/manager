@@ -18,7 +18,6 @@ $p = "home";
 }
 ?>
 
-
 <?php
 include('modules/header.mod.php');
 echo StyleMgr::loadPage($p);
