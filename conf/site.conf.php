@@ -2,10 +2,9 @@
 
 class CONFIG {
 // MySQL Verbindungsdaten
-const USERNAME = "";
-const PASSWORD = "";
+const USERNAME = "verwarn";
+const PASSWORD = "YoJi6ig5H7Yolev5Cako3igi6o2eGE";
 const HOSTNAME = "127.0.0.1:3306";
-const DB = "";
 
 // Generell
 const PROJEKT = "StraMa Laenalith";
