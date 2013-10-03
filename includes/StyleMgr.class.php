@@ -10,9 +10,8 @@ class StyleMgr
 {
 	static function loadPage($p)
 	{
-		if(file_exists('../modules/'.$p.'.mod.php'))
+		if(file_exists('/var/www/modules/'.$p.'.mod.php'))
 		{
-			// Ob_Start damit der code aus dem modul ausgefuehrt wird
 			ob_start();
 			include('../modules/'.$p.'.mod.php');
 			$contents = ob_get_clean();
