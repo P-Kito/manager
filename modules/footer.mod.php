@@ -4,8 +4,8 @@
 <?php echo CONFIG::PROJEKT . ' '. CONFIG::VERSION; ?>
 </div>
 </div>
-<div id="footerbox">
 </div>
+<div id="footerbox">
 </div>
 </body>
 </html>
