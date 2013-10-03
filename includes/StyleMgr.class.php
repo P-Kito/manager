@@ -10,7 +10,7 @@ class StyleMgr
 {
 	static function loadPage($p)
 	{
-		if(file_exists('/var/www/raft897gibe624/modules/'.$p.'.mod.php'))
+		if(file_exists(realpath('../modules/'.$p.'.mod.php')))
 		{
 			ob_start();
 			include('../modules/'.$p.'.mod.php');
