@@ -14,7 +14,7 @@ class MySQLMgr
 		// Used for Character
 		$c1 = mysql_connect($host,$user,$pass);
 		// Used for general website
-		$c2 = mysql_connect($host,$user,$pass);
+		$c2 = mysql_connect($host,$user,$pass,true);
 	}
 	
 	static function selectDB($db1, $db2)
