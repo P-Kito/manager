@@ -12,9 +12,9 @@ class MySQLMgr
 	static function connectDB($user, $pass, $host)
 	{
 		// Used for Character
-		$c1 = mysql_connect($host,$user,$pass);
+		self::$c1 = mysql_connect($host,$user,$pass);
 		// Used for general website
-		$c2 = mysql_connect($host,$user,$pass,true);
+		self::$c2 = mysql_connect($host,$user,$pass);
 	}
 	
 	static function selectDB($db1, $db2)
