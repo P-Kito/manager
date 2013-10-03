@@ -18,12 +18,6 @@ background-image: url(images/header.jpeg), url(images/background_logo.jpeg);
 background-repeat: no-repeat;
 }
 
-#footerbox {
-width: 902px;
-height: 10px;
-background-image: url(images/footer_logo.jpeg);
-}
-
 #center {
 margin-top: 8px;
 display: block;
