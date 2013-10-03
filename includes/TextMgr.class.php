@@ -12,7 +12,7 @@ class TextMgr
 		$result = MySQLMgr::executeSingle($query);
 		if ($result == "" && !$ignore)
 		{
-			return($result);
+			return($query);
 		}
 		else
 		{
