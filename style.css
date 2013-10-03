@@ -12,6 +12,8 @@ min-width: 40px
 } 
 
 #logobox {
+width: 900px;
+height: 150px;
 background-image: url(images/background_logo.jpeg), url(images/header.jpeg);
 }
 
