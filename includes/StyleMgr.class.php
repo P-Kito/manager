@@ -8,10 +8,10 @@ class StyleMgr
 {
 	static function loadPage($p)
 	{
-		if(file_exists($_SERVER['DOCUMENT_ROOT'] . 'manager/modules/'.$p.'.mod.php'))
+		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/manager/modules/'.$p.'.mod.php'))
 		{
 			ob_start();
-			include($_SERVER['DOCUMENT_ROOT'] . 'manager/modules/'.$p.'.mod.php');
+			include($_SERVER['DOCUMENT_ROOT'] . '/manager/modules/'.$p.'.mod.php');
 			$contents = ob_get_clean();
 			return($contents);
 		} else {
