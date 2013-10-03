@@ -10,7 +10,7 @@ class StyleMgr
 {
 	static function loadPage($p)
 	{
-		if(file_exists('../' . dirname(__FILE__) . '/modules/'.$p.'.mod.php'))
+		if(file_exists(dirname(__FILE__) . '/modules/'.$p.'.mod.php'))
 		{
 			ob_start();
 			include('../modules/'.$p.'.mod.php');
