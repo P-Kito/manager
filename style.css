@@ -15,6 +15,10 @@ min-width: 40px
 background-image: url(images/background_logo.jpeg);
 }
 
+#logobox.logo {
+margin-left: 5px;
+}
+
 #center {
 margin-top: 8px;
 display: block;
