@@ -12,7 +12,7 @@ min-width: 40px
 } 
 
 #logobox {
-background-image: 80% url(images/background_logo.jpeg);
+background-image: url(images/background_logo.jpeg) 80%;
 }
 
 #center {
