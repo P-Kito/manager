@@ -19,16 +19,16 @@ class MySQLMgr
 	
 	static function selectDB($db1, $db2)
 	{
-		mysql_select_db($db1, $c1);
-		mysql_select_db($db2, $c2);
+		mysql_select_db($db1, self::$c1);
+		mysql_select_db($db2, self::$c2);
 	}
 	
 	static function executeSingle($query, $db = false /* always char db*/)
 	{
 		if ($db)
-			$result = mysql_query($query, $c2);
+			$result = mysql_query($query, self::$c2);
 		else
-			$result = mysql_query($query, $c1);
+			$result = mysql_query($query, self::$c1);
 		$row = mysql_fetch_array($result);
 		return($row[0]);
 	}
