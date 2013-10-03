@@ -36,24 +36,24 @@ class MySQLMgr
 	static function executeUpdate($query, $db = false)
 	{
 		if ($db == true) 
-			$result = mysql_query($query, $c2);
+			$result = mysql_query($query, self::$c2);
 		else
-			$result = mysql_query($query, $c1);
+			$result = mysql_query($query, self::$c1);
 	}
 	
 	static function executeMulti($query, $db = false)
 	{
 		if ($db == true) 
-			$result = mysql_query($query, $c2);
+			$result = mysql_query($query, self::$c2);
 		else
-			$result = mysql_query($query, $c1);
+			$result = mysql_query($query, self::$c1);
 		return($result);
 	}
 	
 	static function closeDB ()
 	{
-		mysql_close($c1);
-		mysql_close($c2);
+		mysql_close(self::$c1);
+		mysql_close(self::$c2);
 	}
 }
 ?>
