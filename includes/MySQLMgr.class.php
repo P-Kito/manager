@@ -9,7 +9,7 @@ class MySQLMgr
 	static $c1 = null;
 	static $c2 = null;
 	
-	static function connectDB ($user, $pass, $host)
+	static function connectDB($user, $pass, $host)
 	{
 		// Used for Character
 		$c1 = mysql_connect($host,$user,$pass);
@@ -52,7 +52,8 @@ class MySQLMgr
 	
 	static function closeDB ()
 	{
-		mysql_close();
+		mysql_close($c1);
+		mysql_close($c2);
 	}
 }
 ?>
