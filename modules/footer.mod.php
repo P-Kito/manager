@@ -1,7 +1,7 @@
 </div>
 <div id="content-menu">
 <div id="footer">
-Copyright 2013 <?php echo '@'. CONFIG::PROJEKT . ' '. CONFIG::VERSION; ?> <a href="index.php?p=impressum">Impressum</a>
+<?php CONFIG::PROJEKT . ' '. CONFIG::VERSION; ?>
 </div>
 </div>
 </div>
