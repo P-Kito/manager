@@ -16,7 +16,7 @@
 <div id="menu">
 <div id='cssmenu'>
 <ul>
-   <li <?php if ($p == "home") echo "class=\"active\""; ?>><a href='index.php?p=home'><span>Home</span></a></li>
+   <li <?php if ($p == "home") echo "class=\"active\""; ?>><a href='index.php?p=home'><span><?php echo TextMgr::getText('menu_home', true); ?></span></a></li>
 </ul>
 </div>
 </div>
