@@ -19,7 +19,7 @@ $p = "home";
 ?>
 
 <?php
-echo MysqlMgr::executeSingle("SELECT * FROM tbltext", true);
+echo MysqlMgr::executeSingle("SELECT * FROM tbltext;", true);
 include('modules/header.mod.php');
 echo StyleMgr::loadPage($p);
 include('modules/footer.mod.php');
