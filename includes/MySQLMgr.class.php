@@ -14,7 +14,7 @@ class MySQLMgr
 		// Used for Character
 		$c1 = mysql_connect($host,$user,$pass);
 		// Used for general website
-		$c2 = mysql_connect($host,$user,$pass, true);
+		$c2 = mysql_connect($host,$user,$pass);
 	}
 	
 	static function selectDB($db1, $db2)
@@ -23,9 +23,9 @@ class MySQLMgr
 		mysql_select_db($db2, $c2);
 	}
 	
-	static function executeSingle($query, $db = false)
+	static function executeSingle($query, $db = false /* always char db*/)
 	{
-		if ($db == true) 
+		if ($db)
 			$result = mysql_query($query, $c2);
 		else
 			$result = mysql_query($query, $c1);
