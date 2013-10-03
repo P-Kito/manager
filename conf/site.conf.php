@@ -9,9 +9,6 @@ const DB = "";
 
 // Generell
 const PROJEKT = "StraMa Laenalith";
-
-
-// Webseiten Version
 const VERSION = "V1.0";
 
 }
