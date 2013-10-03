@@ -1,5 +1,5 @@
 body {
-background-image: url(images/mainbg.png);
+#background-image: url(images/mainbg.png);
 font-family:'Calibri';
 font-size:1em;
 text-align: center;
