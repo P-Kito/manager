@@ -4,6 +4,8 @@
 <?php echo CONFIG::PROJEKT . ' '. CONFIG::VERSION; ?>
 </div>
 </div>
+<div id="logobox">
+</div>
 </div>
 </body>
 </html>
