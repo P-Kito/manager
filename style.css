@@ -12,11 +12,7 @@ min-width: 40px
 } 
 
 #logobox {
-background-image: url(images/background_logo.jpeg);
-}
-
-#logobox.logo {
-margin-left: 5px;
+background-image: url(images/background_logo.jpeg), url(images/header.jpeg);
 }
 
 #center {

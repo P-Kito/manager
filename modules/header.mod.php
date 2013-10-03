@@ -11,9 +11,6 @@
 <div id="center">
 <div id="shadowbox">
 <div id="logobox">
-<div class="logo">
-<img src="images/header.jpeg"><br>
-</div>
 </div>
 <div id="content-menu"> 
 <div id="menu">
