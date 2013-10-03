@@ -10,7 +10,7 @@ class StyleMgr
 {
 	static function loadPage($p)
 	{
-		if(file_exists($_SERVER['DOCUMENT_ROOT'].'/modules/'.$p.'.mod.php'))
+		if(file_exists('../modules/'.$p.'.mod.php'))
 		{
 			// Ob_Start damit der code aus dem modul ausgefuehrt wird
 			ob_start();
