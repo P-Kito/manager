@@ -7,6 +7,7 @@ require_once('includes/StyleMgr.class.php');
 require_once('includes/TextMgr.class.php');
 
 MysqlMgr::connectDB(CONFIG::USERNAME, CONFIG::PASSWORD, CONFIG::HOSTNAME);
+MysqlMgr::selectDB(CONFIG::DB1, CONFIG::DB2);
 
 // Kein GET Variable ist automatisch home
 if (isset($_GET["p"]))

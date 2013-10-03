@@ -8,8 +8,8 @@ class TextMgr
 {
 	static function getText($what, $ignore, $withBR = true)
 	{
-		$query = "SELECT text FROM verwarn_manager.tbltext WHERE idText='".$what."'";
-		$result = MySQLMgr::executeSingle($query);
+		$query = "SELECT text FROM tbltext WHERE idText='".$what."'";
+		$result = MySQLMgr::executeSingle($query, true);
 		if ($result == "" && !$ignore)
 		{
 			return($what);
