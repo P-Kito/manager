@@ -4,7 +4,7 @@
  *	Manager für den Style
  */
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/conf/site.conf.php');
+include_once('../conf/site.conf.php');
 
 class StyleMgr 
 {
@@ -14,7 +14,7 @@ class StyleMgr
 		{
 			// Ob_Start damit der code aus dem modul ausgefuehrt wird
 			ob_start();
-			include($_SERVER['DOCUMENT_ROOT'].'/modules/'.$p.'.mod.php');
+			include('../modules/'.$p.'.mod.php');
 			$contents = ob_get_clean();
 			return($contents);
 		} else {
