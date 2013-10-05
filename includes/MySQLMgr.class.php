@@ -13,20 +13,16 @@ class MySQLMgr
 	{
 		// Used for Auth
 		self::$authDB = mysql_connect($host,$user,$pass);
+		mysql_select_db(CONFIG::DB1, self::$authDB);
 		// Used for general website
 		self::$webDB = mysql_connect($host,$user,$pass);
-	}
-	
-	static function selectDB($db1, $db2)
-	{
-		mysql_select_db($db1, self::$authDB);
-		mysql_select_db($db2, self::$webDB);
+		mysql_select_db(CONFIG::DB2, self::$webDB);
 	}
 	
 	static function executeSingle($query, $db = false /* always auth db*/)
 	{
-		if (!$db)
-			$result = mysql_query($query, self::$authDB);
+		if ($db)
+			$result = mysql_query($query, self::$webDB);
 		else
 			$result = mysql_query($query, self::$authDB);
 		$row = mysql_fetch_array($result);
