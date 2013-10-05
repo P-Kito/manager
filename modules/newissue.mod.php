@@ -27,6 +27,7 @@ if (isset($_POST["send"]))
 	else
 		echo TextMgr::getText('character_not_found', false);
 } else {
+echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
 ?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="searchacc">
