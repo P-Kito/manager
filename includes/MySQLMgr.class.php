@@ -21,6 +21,7 @@ class MySQLMgr
 	
 	static function executeSingle($query, $db = false /* always auth db*/)
 	{
+		echo $query . " - " . $db;
 		if ($db)
 			$result = mysql_query($query, self::$webDB);
 		else
