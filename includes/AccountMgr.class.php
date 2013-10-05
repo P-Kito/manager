@@ -12,10 +12,13 @@ class AccountMgr
 		return(MySQLMgr::executeMulti($query, false));
 	}
 
-	static function getHistory($guid)
+	static function getHistory($guid, $full = false)
 	{
 		$text = TextMgr::getText('auswirkungen', false);
-		$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
+		if ($full)
+			$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' ORDER BY id";
+		else
+			$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
 		$wirkung = split(';', $text);

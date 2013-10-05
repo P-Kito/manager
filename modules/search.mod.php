@@ -19,7 +19,7 @@ if (isset($_POST["send"]))
 				</tr>
 			</thead>
 			<tbody>
-			".AccountMgr::getHistory($accdata[0])."
+			".AccountMgr::getHistory($accdata[0], true)."
 			</tbody>
 		</table>
 		";
