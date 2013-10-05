@@ -12,6 +12,12 @@ class AccountMgr
 		return(MySQLMgr::executeMulti($query, false));
 	}
 
+	static function fetchDataGUID($guid)
+	{
+		$query = "SELECT username FROM account WHERE id='".$guid."'";
+		return(MySQLMgr::executeMulti($query, false));
+	}
+	
 	static function getHistory($guid, $full = false)
 	{
 		$text = TextMgr::getText('auswirkungen', false);
@@ -37,6 +43,16 @@ class AccountMgr
 	static function checkExist($username)
 	{
 		$query = "SELECT id FROM account WHERE username='".$username."'";
+		$result = MySQLMgr::executeSingle($query, false);
+		if (!$result)
+			return(false);
+		else
+			return(true);
+	}
+	
+	static function checkExistGUID($guid)
+	{
+		$query = "SELECT id FROM account WHERE id='".$guid."'";
 		$result = MySQLMgr::executeSingle($query, false);
 		if (!$result)
 			return(false);

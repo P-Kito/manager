@@ -29,7 +29,31 @@ if (isset($_POST["send"]))
 		echo TextMgr::getText('character_not_found', false);
 } elseif (isset($_GET["guid"]))
 {
-
+	$guid = mysql_real_escape_string($_GET["guid"]);
+	if (AccountMgr::checkExistGUID($guid))
+	{
+		$accdata = AccountMgr::fetchDataGUID($guid);
+		$accdata = mysql_fetch_array($accdata);
+		/* [0] = USERNAME */
+		echo TextMgr::getText('case_header_search', false, true, array($accdata[0]));
+		echo "
+		<table cellspacing='0'>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Verwarnstufe</th>
+					<th>Kommentar</th>
+					<th>Datum</th>
+				</tr>
+			</thead>
+			<tbody>
+			".AccountMgr::getHistory($guid, true)."
+			</tbody>
+		</table>
+		";
+	}
+	else
+		echo TextMgr::getText('character_not_found', false);
 }
 else {
 echo TextMgr::getText('new_issue', false);
