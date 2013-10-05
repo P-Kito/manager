@@ -5,10 +5,12 @@ if (isset($_POST["send"]))
 {
 	$username = mysql_real_escape_string($_POST["name"]);
 	if (AccountMgr::checkExist($username))
+	{
 		$accdata = AccountMgr::fetchData($username);
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = GUID // [1] = LAST_IP */
 		echo TextMgr::getText('character_found', false, true, array($accdata[0], $accdata[1]));
+	}
 	else
 		echo TextMgr::getText('character_not_found', false);
 } else {
