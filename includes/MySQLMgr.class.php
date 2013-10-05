@@ -25,10 +25,10 @@ class MySQLMgr
 	
 	static function executeSingle($query, $db = false /* always auth db*/)
 	{
-		if ($db)
-			$result = mysql_query($query, self::$webDB);
-		else
+		if (!$db)
 			$result = mysql_query($query, self::$authDB);
+		else
+			$result = mysql_query($query, self::$webDB);
 		$row = mysql_fetch_array($result);
 		return($row[0]);
 	}
