@@ -29,7 +29,7 @@ if (isset($_POST["send"]))
 } else {
 echo TextMgr::getText('new_issue', false);
 ?>
-<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="searchacc">
+<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=search'; ?>" method="post" id="searchacc">
     <p class="name">  
         <input type="text" name="name" id="name" />
         <label for="name">Accountname</label>
