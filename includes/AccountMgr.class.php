@@ -11,9 +11,9 @@ class AccountMgr
 		$query = "SELECT id FROM account WHERE username='".$username."'";
 		$result = MySQLMgr::executeSingle($query);
 		if ($result != "")
-			return true;
+			return(true);
 		else
-			return false;
+			return(false);
 	}
 
 }
