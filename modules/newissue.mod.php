@@ -10,10 +10,10 @@
         </p>  
       
         <p class="stufe">  
-            <input type="radio" name="stufe" value="player_warn_1"> <?php echo TextMgr::getText('player_warn_1', false); ?><br />
-			<input type="radio" name="stufe" value="player_warn_2"> <?php echo TextMgr::getText('player_warn_2', false); ?><br />
-			<input type="radio" name="stufe" value="player_warn_3"> <?php echo TextMgr::getText('player_warn_3', false); ?><br />
-            <input type="radio" name="stufe" value="player_warn_4"> <?php echo TextMgr::getText('player_warn_4', false); ?><br />
+            <input type="radio" name="stufe" value="player_warn_1"> <?php echo TextMgr::getText('player_warn_1', false); ?>
+			<input type="radio" name="stufe" value="player_warn_2"> <?php echo TextMgr::getText('player_warn_2', false); ?>
+			<input type="radio" name="stufe" value="player_warn_3"> <?php echo TextMgr::getText('player_warn_3', false); ?>
+            <input type="radio" name="stufe" value="player_warn_4"> <?php echo TextMgr::getText('player_warn_4', false); ?>
 			<input type="radio" name="stufe" value="player_warn_5"> <?php echo TextMgr::getText('player_warn_5', false); ?>
         </p>  
       
