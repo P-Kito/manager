@@ -24,7 +24,7 @@ class MySQLMgr
 		echo $query . " - " . $db;
 		if ($db)
 			$result = mysql_query($query, self::$webDB);
-		else
+		else if ($db == null)
 			$result = mysql_query($query, self::$authDB);
 		$row = mysql_fetch_array($result);
 		return($row[0]);
