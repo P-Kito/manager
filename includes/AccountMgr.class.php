@@ -15,7 +15,7 @@ class AccountMgr
 	static function getHistory($guid)
 	{
 		$text = TextMgr::getText('auswirkungen', false);
-		$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' AND timestamp <= now()-interval 6 month ORDER BY id";
+		$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
 		$wirkung = split(';', $text);
