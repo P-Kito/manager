@@ -8,7 +8,7 @@ class AccountMgr
 {
 	static function fetchData($username)
 	{
-		$query = "SELECT id, last_ip FROM account WHERE username='".$username."'";
+		$query = "SELECT id, last_ip, username FROM account WHERE username='".$username."'";
 		return(MySQLMgr::executeMulti($query, false));
 	}
 
