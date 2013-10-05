@@ -8,7 +8,7 @@ if (isset($_POST["send"]))
 		$accdata = AccountMgr::fetchData($username);
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = GUID */
-		echo TextMgr::getText('case_header', array($username));
+		echo TextMgr::getText('case_header', false, array($username));
 		echo "
 		<table cellspacing='0'>
 			<thead>
