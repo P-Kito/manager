@@ -23,7 +23,7 @@
         </p>  
       
         <p class="submit">  
-            <input type="submit" value="Send" />  
+            <input type="submit" value="Absenden" />  
         </p>  
       
     </form>  
