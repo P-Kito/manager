@@ -19,7 +19,7 @@ class TextMgr
 			if ($withBR == true)
 				return(nl2br(self::makelink($result)));
 			elseif ($withBR == false)
-				return(vprintf($result, $replace));
+				return(vsprintf($result, $replace));
 		}
 	}
 
