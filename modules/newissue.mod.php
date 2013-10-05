@@ -6,7 +6,7 @@
       
         <p class="name">  
             <input type="text" name="name" id="name" />  
-            <label for="name">Charaktername</label>  
+            <label for="name">Accountname</label>  
         </p>  
       
         <p class="submit">  
