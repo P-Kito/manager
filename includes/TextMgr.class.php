@@ -6,7 +6,7 @@
 
 class TextMgr 
 {
-	static function getText($what, $ignore, $withBR = true, $replace = array())
+	static function getText($what, $ignore, $withBR = true, $replace = null)
 	{
 		$query = "SELECT text FROM tbltext WHERE idText='".$what."'";
 		$result = MySQLMgr::executeSingle($query, true);
