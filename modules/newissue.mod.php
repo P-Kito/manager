@@ -9,7 +9,6 @@ if (isset($_POST["send"]))
 		$accdata = AccountMgr::fetchData($username);
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = GUID // [1] = LAST_IP // [2] = username*/
-		echo TextMgr::getText('character_found', false, true, array($accdata[2], $accdata[0]));
 echo "
 <table cellspacing='0'>
 	<thead>
@@ -27,7 +26,7 @@ echo "
 			<td>".$accdata[0]."</td>
 			<td>".$accdata[2]."</td>
 			<td>Kommt noch</td>
-			<td>Kommt noch</td>
+			<td>test test test test test test test</td>
 			<td>Kommt noch</td>
 			<td>Kommt noch</td>
 		</tr>
