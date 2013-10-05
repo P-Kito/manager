@@ -28,7 +28,7 @@ class MySQLMgr
 		if (!$db)
 			$result = mysql_query($query, self::$authDB);
 		else
-			$result = mysql_query($query, self::$webDB);
+			$result = mysql_query($query, self::$authDB);
 		$row = mysql_fetch_array($result);
 		return($row[0]);
 	}
