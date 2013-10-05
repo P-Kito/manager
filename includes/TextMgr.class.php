@@ -6,7 +6,7 @@
 
 class TextMgr 
 {
-	static function getText($what, $ignore, $withBR = true)
+	static function getText($what, $ignore, $withBR = true, $replace = array())
 	{
 		$query = "SELECT text FROM tbltext WHERE idText='".$what."'";
 		$result = MySQLMgr::executeSingle($query, true);
@@ -19,7 +19,7 @@ class TextMgr
 			if ($withBR == true)
 				return(nl2br(self::makelink($result)));
 			elseif ($withBR == false)
-				return($result);
+				return(sprintf($result, $replace));
 		}
 	}
 
