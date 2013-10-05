@@ -3,6 +3,7 @@ echo TextMgr::getText('new_issue', false);
 
 if (isset($_POST["send"]))
 {
+echo TextMgr::getText('character_not_found', false);
 } else {
 ?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="searchacc">
