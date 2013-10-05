@@ -372,7 +372,8 @@ textarea {
         width: 400px;  
         max-width: 400px;  
         height: 150px;  
-        line-height: 150%;  
+        line-height: 150%;
+		padding: 9px;		
 }  
       
 input:hover, textarea:hover,  
@@ -383,7 +384,7 @@ nput:focus, textarea:focus {
       
 .form label {   
         margin-left: 10px;   
-        color: #578803;   
+        color: #578803;
 }  
       
 .submit input {  
