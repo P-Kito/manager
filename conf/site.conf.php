@@ -5,8 +5,8 @@ class CONFIG {
 const USERNAME = "verwarn";
 const PASSWORD = "test";
 const HOSTNAME = "vortexirc.com";
-const DB1 = 'LALELU_Auth';
-const DB2 = 'verwarn_manager';
+const DB1 = "LALELU_Auth";
+const DB2 = "verwarn_manager";
 
 // Generell
 const PROJEKT = "StraMa Laenalith";
