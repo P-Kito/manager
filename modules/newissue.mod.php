@@ -9,25 +9,8 @@
             <label for="name">Charaktername</label>  
         </p>  
       
-        <p class="stufe">  
-            <input type="radio" name="stufe" value="player_warn_1"> <?php echo TextMgr::getText('player_warn_1', false); ?><br />
-			<input type="radio" name="stufe" value="player_warn_2"> <?php echo TextMgr::getText('player_warn_2', false); ?><br />
-			<input type="radio" name="stufe" value="player_warn_3"> <?php echo TextMgr::getText('player_warn_3', false); ?><br />
-            <input type="radio" name="stufe" value="player_warn_4"> <?php echo TextMgr::getText('player_warn_4', false); ?><br />
-			<input type="radio" name="stufe" value="player_warn_5"> <?php echo TextMgr::getText('player_warn_5', false); ?>
-        </p>  
-      
-        <p class="web">  
-            <input type="text" name="web" id="web" />  
-            <label for="web">Website</label>  
-        </p>  
-      
-        <p class="text">  
-            <textarea name="text"></textarea>  
-        </p>  
-      
         <p class="submit">  
-            <input type="submit" value="Absenden" />  
+            <input type="submit" value="Suchen" />  
         </p>  
       
     </form>  
