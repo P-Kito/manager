@@ -8,21 +8,22 @@ if (isset($_POST["send"]))
 		$accdata = AccountMgr::fetchData($username);
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = GUID */
-echo "
-<table cellspacing='0'>
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Verwarnstufe</th>
-			<th>Kommentar</th>
-			<th>Datum</th>
-		</tr>
-	</thead>
-	<tbody>
-	".AccountMgr::getHistory($accdata[0])."
-	</tbody>
-</table>
-";
+		echo TextMgr::getText('case_header', array($username));
+		echo "
+		<table cellspacing='0'>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Verwarnstufe</th>
+					<th>Kommentar</th>
+					<th>Datum</th>
+				</tr>
+			</thead>
+			<tbody>
+			".AccountMgr::getHistory($accdata[0])."
+			</tbody>
+		</table>
+		";
 	}
 	else
 		echo TextMgr::getText('character_not_found', false);
