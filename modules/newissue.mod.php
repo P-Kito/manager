@@ -7,28 +7,19 @@ if (isset($_POST["send"]))
 	{
 		$accdata = AccountMgr::fetchData($username);
 		$accdata = mysql_fetch_array($accdata);
-		/* [0] = GUID // [1] = LAST_IP // [2] = username*/
+		/* [0] = GUID */
 echo "
 <table cellspacing='0'>
 	<thead>
 		<tr>
-			<th>ID</th>
-			<th>Accountname</th>
+			<th>#</th>
 			<th>Verwarnstufe</th>
 			<th>Kommentar</th>
-			<th>Letzte &Auml;nderung</th>
-			<th>Anzahl der &Auml;nderungen</th>
+			<th>Datum</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>".$accdata[0]."</td>
-			<td>".$accdata[2]."</td>
-			<td>Kommt noch</td>
-			<td>test test test test test test test</td>
-			<td>Kommt noch</td>
-			<td>Kommt noch</td>
-		</tr>
+	".AccountMgr::getHistory($accdata[0])."
 	</tbody>
 </table>
 ";
