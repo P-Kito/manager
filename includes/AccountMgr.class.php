@@ -11,7 +11,7 @@ class AccountMgr
 		$query = "SELECT id FROM account WHERE username='".$username."'";
 		$result = MySQLMgr::executeSingle($query, false);
 		if (!$result)
-			die('Invalid query: ' . mysql_error());
+			die(TextMgr::getText('internal_error'), false);
 		if ($result == "")
 			return(false);
 		else
