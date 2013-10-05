@@ -25,7 +25,7 @@ class MySQLMgr
 	
 	static function executeSingle($query, $db = false /* always auth db*/)
 	{
-		if ($db)
+		if (!$db)
 			$result = mysql_query($query, self::$authDB);
 		else
 			$result = mysql_query($query, self::$webDB);
