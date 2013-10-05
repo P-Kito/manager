@@ -10,75 +10,30 @@ if (isset($_POST["send"]))
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = GUID // [1] = LAST_IP // [2] = username*/
 		echo TextMgr::getText('character_found', false, true, array($accdata[2], $accdata[0]));
-?>
+echo "
 <table cellspacing='0'>
-
-	<!-- Table Header -->
 	<thead>
 		<tr>
-			<th>Task Details</th>
-			<th>Progress</th>
-			<th>Vital Task</th>
+			<th>ID</th>
+			<th>Accountname</th>
+			<th>Verwarnstufe</th>
+			<th>Kommentar</th>
+			<th>Letzte &Auml;nderung</th>
+			<th>Anzahl der &Auml;nderungen</th>
 		</tr>
 	</thead>
-	<!-- Table Header -->
-
-	<!-- Table Body -->
 	<tbody>
-
 		<tr>
-			<td>Create pretty table design</td>
-			<td>100%</td>
-			<td>Yes</td>
-		</tr><!-- Table Row -->
-
-		<tr class="even">
-			<td>Take the dog for a walk</td>
-			<td>100%</td>
-			<td>Yes</td>
-		</tr><!-- Darker Table Row -->
-
-		<tr>
-			<td>Waste half the day on Twitter</td>
-			<td>20%</td>
-			<td>No</td>
+			<td>".$accdata[0]."</td>
+			<td>".$accdata[2]."</td>
+			<td>Kommt noch</td>
+			<td>Kommt noch</td>
+			<td>Kommt noch</td>
+			<td>Kommt noch</td>
 		</tr>
-
-		<tr class="even">
-			<td>Feel inferior after viewing Dribble</td>
-			<td>80%</td>
-			<td>No</td>
-		</tr>
-
-		<tr>
-			<td>Wince at "to do" list</td>
-			<td>100%</td>
-			<td>Yes</td>
-		</tr>
-
-		<tr class="even">
-			<td>Vow to complete personal project</td>
-			<td>23%</td>
-			<td>yes</td>
-		</tr>
-
-		<tr>
-			<td>Procrastinate</td>
-			<td>80%</td>
-			<td>No</td>
-		</tr>
-
-		<tr class="even">
-			<td><a href="#yep-iit-doesnt-exist">Hyperlink 	Example</a></td>
-			<td>80%</td>
-			<td><a href="#inexistent-id">Another</a></td>
-		</tr>
-
 	</tbody>
-	<!-- Table Body -->
-
 </table>
-<?php
+";
 	}
 	else
 		echo TextMgr::getText('character_not_found', false);
