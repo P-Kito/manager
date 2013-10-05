@@ -1,7 +1,6 @@
 <?php
 if (isset($_POST["send"]))
 {
-	echo TextMgr::getText('player_info', false);
 	$username = mysql_real_escape_string($_POST["name"]);
 	if (AccountMgr::checkExist($username))
 	{
