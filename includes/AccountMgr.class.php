@@ -28,7 +28,7 @@ class AccountMgr
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
 		$wirkung = split(';', $text);
-		if (!$row = mysql_fetch_arry($result))
+		if (!$row = mysql_fetch_array($result))
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
 		else
 			while ($row = mysql_fetch_row($result))
