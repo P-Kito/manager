@@ -26,7 +26,7 @@ if (isset($_POST["send"]))
 ?>
 		<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="editacc">
 			<p class="guid">  
-				<input type="text" name="guid" id="guid" value="<?php echo $accdata[0]; ?>" readonly="readonly" />
+				<input type="text" name="guid" id="guid" value="<?php echo $accdata[0]; ?>" readonly="readonly" disabled="disabled" />
 				<img src="images/lock.gif"><label for="guid">Account GUID</label>
 			</p>
 			<p class="submit">
