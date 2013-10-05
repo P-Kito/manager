@@ -56,7 +56,7 @@ if (isset($_POST["send"]))
 		echo TextMgr::getText('character_not_found', false);
 }
 else {
-echo TextMgr::getText('new_issue', false);
+echo TextMgr::getText('search_issue', false);
 ?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=search'; ?>" method="post" id="searchacc">
     <p class="name">  
