@@ -22,7 +22,8 @@ class AccountMgr
 		{
 			$html .= "<tr>";
 			$html .= "<td>" . $row[0] . "</td>";
-			$html .= "<td>" . split(';', $text)[$row[1]-1] . "</td>";
+			$wirkung = split(';', $text);
+			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 			$html .= "<td>" . $row[2] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
 			$html .= "</tr>";
