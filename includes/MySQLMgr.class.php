@@ -19,12 +19,12 @@ class MySQLMgr
 		mysql_select_db(CONFIG::DB2, self::$webDB);
 	}
 	
-	static function executeSingle($query, $db = false /* always auth db*/)
+	static function executeSingle($query, $db)
 	{
 		echo $query . " - " . $db;
 		if ($db)
 			$result = mysql_query($query, self::$webDB);
-		else if ($db == null)
+		else
 			$result = mysql_query($query, self::$authDB);
 		$row = mysql_fetch_array($result);
 		return($row[0]);
