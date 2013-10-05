@@ -22,10 +22,21 @@ if (isset($_POST["send"]))
 			".AccountMgr::getHistory($accdata[0])."
 			</tbody>
 		</table>
-		";
+		<br />";
+?>
+		<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="editacc">
+			<p class="name">  
+				<input type="text" name="guid" id="guid" value="<?php echo $accdata[0]; ?>" locked />
+				<label for="name">Account GUID</label>
+			</p>
+			<p class="submit">
+				<input type="submit" name="edit" value="<?php echo TextMgr::getText('account_edit', false); ?>" />  
+			</p> 
+		</form>
+<?php		
 	}
 	else
-		echo TextMgr::getText('character_not_found', false);
+		echo TextMgr::getText('account_not_found', false);
 } else {
 echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
