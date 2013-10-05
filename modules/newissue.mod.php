@@ -15,7 +15,6 @@
 			<input type="radio" name="stufe" value="player_warn_3"> <?php echo TextMgr::getText('player_warn_3', false); ?><br />
             <input type="radio" name="stufe" value="player_warn_4"> <?php echo TextMgr::getText('player_warn_4', false); ?><br />
 			<input type="radio" name="stufe" value="player_warn_5"> <?php echo TextMgr::getText('player_warn_5', false); ?>
-            <label for="stufe">Verwarnungsstufe</label>  
         </p>  
       
         <p class="web">  
