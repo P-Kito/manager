@@ -27,7 +27,11 @@ if (isset($_POST["send"]))
 	}
 	else
 		echo TextMgr::getText('character_not_found', false);
-} else {
+} elseif (isset($_GET["guid"]))
+{
+
+}
+else {
 echo TextMgr::getText('new_issue', false);
 ?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=search'; ?>" method="post" id="searchacc">
