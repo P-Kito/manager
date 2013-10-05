@@ -25,9 +25,9 @@ if (isset($_POST["send"]))
 		<br />";
 ?>
 		<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="editacc">
-			<p class="name">  
+			<p class="guid">  
 				<input type="text" name="guid" id="guid" value="<?php echo $accdata[0]; ?>" readonly="readonly" />
-				<label for="name">Account GUID</label>
+				<img src="images/lock.gif"><label for="guid">Account GUID</label>
 			</p>
 			<p class="submit">
 				<input type="submit" name="edit" value="<?php echo TextMgr::getText('account_edit', false); ?>" />  
