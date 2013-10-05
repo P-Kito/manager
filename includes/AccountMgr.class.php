@@ -14,6 +14,7 @@ class AccountMgr
 
 	static function getHistory($guid)
 	{
+		$text = TextMgr::getText('auswirkungen', false);
 		$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
@@ -21,7 +22,7 @@ class AccountMgr
 		{
 			$html .= "<tr>";
 			$html .= "<td>" . $row[0] . "</td>";
-			$html .= "<td>" . $row[1] . "</td>";
+			$html .= split(';', $text)[$row[1]+1];
 			$html .= "<td>" . $row[2] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
 			$html .= "</tr>";
