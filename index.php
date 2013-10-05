@@ -6,6 +6,7 @@ require_once('conf/site.conf.php');
 require_once('includes/MySQLMgr.class.php');
 require_once('includes/StyleMgr.class.php');
 require_once('includes/TextMgr.class.php');
+require_once('includes/AccountMgr.class.php');
 
 MysqlMgr::connectDB(CONFIG::USERNAME, CONFIG::PASSWORD, CONFIG::HOSTNAME);
 MysqlMgr::selectDB(CONFIG::DB1, CONFIG::DB2);
