@@ -28,18 +28,17 @@ class AccountMgr
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
 		$wirkung = split(';', $text);
-		if (!$row = mysql_fetch_array($result))
+		while ($row = mysql_fetch_row($result))
+		{
+			$html .= "<tr>";
+			$html .= "<td>" . $row[0] . "</td>";
+			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
+			$html .= "<td>" . $row[2] . "</td>";
+			$html .= "<td>" . $row[3] . "</td>";
+			$html .= "</tr>";
+		}
+		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
-		else
-			while ($row = mysql_fetch_row($result))
-			{
-				$html .= "<tr>";
-				$html .= "<td>" . $row[0] . "</td>";
-				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
-				$html .= "<td>" . $row[2] . "</td>";
-				$html .= "<td>" . $row[3] . "</td>";
-				$html .= "</tr>";
-			}
 		return($html);
 	}
 	
