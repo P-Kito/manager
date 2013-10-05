@@ -9,7 +9,8 @@ class AccountMgr
 	static function checkExist(string $username)
 	{
 		$query = "SELECT id FROM account WHERE username='".$username."'";
-		if (MySQLMgr::executeSingle($query, false) != "")
+		$result = MySQLMgr::executeSingle($query, false);
+		if ($result != "")
 			return true;
 		else
 			return false;
