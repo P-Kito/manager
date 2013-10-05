@@ -440,7 +440,7 @@ table tr:hover td {
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);
 }
 
-input.some_class[readonly="readonly"]{
+input[readonly="readonly"]{
    background-color: #1337f5;
    color: #FFFFFF;
 }
