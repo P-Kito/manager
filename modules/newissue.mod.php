@@ -1,6 +1,7 @@
 <hr />
 <?php echo TextMgr::getText('new_issue', false); ?>
 <hr />
+
     <form class="form">  
       
         <p class="name">  
@@ -8,9 +9,13 @@
             <label for="name">Charaktername</label>  
         </p>  
       
-        <p class="email">  
-            <input type="text" name="email" id="email" />  
-            <label for="email">E-mail</label>  
+        <p class="stufe">  
+            <input type="radio" name="stufe" value="player_warn_1"> <?php echo TextMgr::getText('player_warn_1', false); ?><br />
+			<input type="radio" name="stufe" value="player_warn_2"> <?php echo TextMgr::getText('player_warn_2', false); ?><br />
+			<input type="radio" name="stufe" value="player_warn_3"> <?php echo TextMgr::getText('player_warn_3', false); ?><br />
+            <input type="radio" name="stufe" value="player_warn_4"> <?php echo TextMgr::getText('player_warn_4', false); ?><br />
+			<input type="radio" name="stufe" value="player_warn_5"> <?php echo TextMgr::getText('player_warn_5', false); ?>
+            <label for="stufe">Verwarnungsstufe</label>  
         </p>  
       
         <p class="web">  
