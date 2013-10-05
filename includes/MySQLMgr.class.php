@@ -17,11 +17,13 @@ class MySQLMgr
 		// Used for general website
 		self::$webDB = mysql_connect($host,$user,$pass);
 		mysql_select_db(CONFIG::DB2, self::$webDB);
+		
+		echo "CONNECTED: " . self::$authDB;
+		echo "<br>CONNECTED: " . self::$webDB;
 	}
 	
 	static function executeSingle($query, $db)
 	{
-		echo $query . " - " . $db;
 		if ($db)
 			$result = mysql_query($query, self::$webDB);
 		else
