@@ -1,8 +1,7 @@
 <?php
-echo TextMgr::getText('new_issue', false);
-
 if (isset($_POST["send"]))
 {
+	echo TextMgr::getText('player_info', false);
 	$username = mysql_real_escape_string($_POST["name"]);
 	if (AccountMgr::checkExist($username))
 	{
@@ -37,6 +36,7 @@ echo "
 	else
 		echo TextMgr::getText('character_not_found', false);
 } else {
+echo TextMgr::getText('new_issue', false);
 ?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="searchacc">
     <p class="name">  
