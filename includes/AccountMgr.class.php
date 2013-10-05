@@ -18,11 +18,11 @@ class AccountMgr
 		$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
+		$wirkung = split(';', $text);
 		while ($row = mysql_fetch_row($result))
 		{
 			$html .= "<tr>";
 			$html .= "<td>" . $row[0] . "</td>";
-			$wirkung = split(';', $text);
 			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 			$html .= "<td>" . $row[2] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
