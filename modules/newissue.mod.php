@@ -12,7 +12,7 @@ echo TextMgr::getText('character_not_found', false);
         <label for="name">Accountname</label>
     </p>
     <p class="submit">  
-        <input type="submit" name="send" value="Suchen" />  
+        <input type="submit" name="send" value="<?php echo TextMgr::getText('account_search', false); ?>" />  
     </p> 
 </form>
 <?php

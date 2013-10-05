@@ -6,12 +6,12 @@
  
 class MySQLMgr
 {
-	static $c1 = null;
-	static $c2 = null;
+	static $c1 = null; // Auth
+	static $c2 = null; // General Website
 	
 	static function connectDB($user, $pass, $host)
 	{
-		// Used for Character
+		// Used for Auth
 		self::$c1 = mysql_connect($host,$user,$pass);
 		// Used for general website
 		self::$c2 = mysql_connect($host,$user,$pass);
@@ -23,7 +23,7 @@ class MySQLMgr
 		mysql_select_db($db2, self::$c2);
 	}
 	
-	static function executeSingle($query, $db = false /* always char db*/)
+	static function executeSingle($query, $db = false /* always auth db*/)
 	{
 		if ($db)
 			$result = mysql_query($query, self::$c2);
@@ -35,7 +35,7 @@ class MySQLMgr
 	
 	static function executeUpdate($query, $db = false)
 	{
-		if ($db == true) 
+		if ($db) 
 			$result = mysql_query($query, self::$c2);
 		else
 			$result = mysql_query($query, self::$c1);
@@ -43,7 +43,7 @@ class MySQLMgr
 	
 	static function executeMulti($query, $db = false)
 	{
-		if ($db == true) 
+		if ($db) 
 			$result = mysql_query($query, self::$c2);
 		else
 			$result = mysql_query($query, self::$c1);
