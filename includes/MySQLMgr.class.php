@@ -15,7 +15,7 @@ class MySQLMgr
 		self::$authDB = mysql_connect($host,$user,$pass);
 		mysql_select_db(CONFIG::DB1, self::$authDB);
 		// Used for general website
-		self::$webDB = mysql_connect($host,$user,$pass);
+		self::$webDB = mysql_connect($host,$user,$pass, true);
 		mysql_select_db(CONFIG::DB2, self::$webDB);
 		
 		echo "CONNECTED: " . self::$authDB;
