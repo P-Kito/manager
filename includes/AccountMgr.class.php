@@ -6,7 +6,7 @@
 
 class AccountMgr
 {
-	static function checkExist(string $username)
+	static function checkExist($username)
 	{
 		$query = "SELECT id FROM account WHERE username='".$username."'";
 		$result = MySQLMgr::executeSingle($query, false);
