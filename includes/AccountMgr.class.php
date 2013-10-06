@@ -69,7 +69,7 @@ class AccountMgr
 		
 		for ($i = $lastStufe+1; $i <= 5; $i++)
 		{
-			$html .= "<option value=\"".$wirkung[$i-1]."\">(".$i.")".$wirkung[$i-1]."</option>";
+			$html .= "<option value=\"".$wirkung[$i-1]."\">(".$i.") ".$wirkung[$i-1]."</option>";
 		}
 		$html .= "</select>";
 		return($html);
