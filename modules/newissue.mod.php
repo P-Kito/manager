@@ -34,6 +34,7 @@ if (isset($_POST["send"]))
 			".AccountMgr::getHistory($accdata[0])."
 			</tbody>
 		</table>
+		".TextMgr::getText('info_verwarnungen', false)."
 		<br />";
 ?>
 			<p class="submit">
