@@ -323,7 +323,7 @@ textarea {
       
 input:hover, textarea:hover,  
 input:focus, textarea:focus,
-select:hover, select:focus , option {   
+select:hover, select:focus , option:hover, option:focus {   
         border-color: #a4ff06;   
         -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
 }  
