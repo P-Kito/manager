@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET["ok"] && $_POST["edit"])
+if (isset($_GET["ok"] && $_POST["edit"]))
 	echo TextMgr::getText('verwarnung_ok', false, true, array($_POST["stufe"], $_POST["kommentar"]));
 if (isset($_POST["send"]))
 {
