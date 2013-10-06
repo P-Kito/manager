@@ -35,6 +35,7 @@ class MySQLMgr
 			$result = mysql_query($query, self::$webDB);
 		else
 			$result = mysql_query($query, self::$authDB);
+		return($result);
 	}
 	
 	static function executeMulti($query, $db = false)
