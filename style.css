@@ -323,7 +323,7 @@ textarea {
       
 input:hover, textarea:hover,  
 input:focus, textarea:focus,
-select:hover, select:focus , option:hover, option:focus {   
+select:hover, select:focus  {   
         border-color: #a4ff06;   
         -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
 }  
@@ -340,8 +340,8 @@ select:hover, select:focus , option:hover, option:focus {
         border: 0;
         font-size: 14px;  
         color: #FFFFFF;  
-        -moz-border-radius: 5px;  
-        -webkit-border-radius: 5px;  
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px; 
 }  
 
 table a:link {
