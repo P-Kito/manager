@@ -301,9 +301,9 @@ padding: 0.25em 40px;
 input, textarea {   
         padding: 9px;  
         border: solid 1px #4c7603;  
-        outline: 0;  
+        outline: 0;
         font: normal 13px/100% Verdana, Tahoma, sans-serif;  
-        width: 100px;  
+        #width: 100px;  
 		max-width: 100px;
 		min-width: 100px;
         background: #FFFFFF url('bg_form.png') left top repeat-x;  
