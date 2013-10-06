@@ -298,7 +298,7 @@ margin: 0.50em 0;
 padding: 0.25em 40px;
 }
 
-input, textarea {   
+input, textarea, select {   
         padding: 9px;  
         border: solid 1px #4c7603;  
         outline: 0;  
