@@ -63,7 +63,7 @@ class AccountMgr
 
 	static function buildStufenSelect($lastStufe)
 	{
-		$html = "";
+		$html = "<select name=\"stufe\">";
 		$text = TextMgr::getText('auswirkungen', false);
 		$wirkung = explode(';', $text);
 		
@@ -71,6 +71,7 @@ class AccountMgr
 		{
 			$html .= "<option value=\"".$wirkung[$i-1]."\">".$wirkung[$i-1]."</option>";
 		}
+		$html .= "</select>";
 		return($html);
 	}
 	
