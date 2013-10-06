@@ -314,9 +314,11 @@ input, textarea, select {
       
 textarea {   
         width: 400px;  
-        max-width: 400px;  
+        max-width: 400px;
+		min-width: 400px;
         height: 80px;
 		max-height: 80px;
+		min-height: 80px;
         line-height: 150%;
 		padding: 9px;		
 }  
