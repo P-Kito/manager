@@ -1,4 +1,6 @@
 <?php
+if (isset($_GET["ok"] && $_POST["edit"])
+	echo TextMgr::getText('verwarnung_ok', false, true, array($_POST["stufe"], $_POST["kommentar"]));
 if (isset($_POST["send"]))
 {
 	$username = mysql_real_escape_string($_POST["name"]);
@@ -9,7 +11,7 @@ if (isset($_POST["send"]))
 		/* [0] = GUID */
 		echo TextMgr::getText('case_header', false, true, array($username));
 		echo "
-		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue'."\" method=\"post\" id=\"editacc\">
+		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok'."\" method=\"post\" id=\"editacc\">
 		<table cellspacing='0'>
 			<thead>
 				<tr>
@@ -25,7 +27,6 @@ if (isset($_POST["send"]))
 		</table>
 		<br />";
 ?>
-		
 			<p class="submit">
 				<input type="submit" name="edit" value="<?php echo TextMgr::getText('account_edit', false); ?>" />  
 			</p> 
