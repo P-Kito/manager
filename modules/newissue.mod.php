@@ -9,6 +9,7 @@ if (isset($_POST["send"]))
 		/* [0] = GUID */
 		echo TextMgr::getText('case_header', false, true, array($username));
 		echo "
+		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue'."\" method=\"post\" id=\"editacc\">
 		<table cellspacing='0'>
 			<thead>
 				<tr>
@@ -24,16 +25,7 @@ if (isset($_POST["send"]))
 		</table>
 		<br />";
 ?>
-		<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="editacc">
-			<p class="guid">  
-				<input type="text" name="guid" id="guid" value="<?php echo $accdata[0]; ?>" readonly="readonly" disabled="disabled" />
-				<img src="images/lock.gif"><label for="guid">Account GUID</label>
-			</p>
-			<p class="stufe">
-				<select name="stufe">
-					<?php echo AccountMgr::buildStufenSelect(AccountMgr::getLastVerwarnstufe($accdata[0])); ?>
-				</select>
-			</p>
+		
 			<p class="submit">
 				<input type="submit" name="edit" value="<?php echo TextMgr::getText('account_edit', false); ?>" />  
 			</p> 
