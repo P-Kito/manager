@@ -1,6 +1,9 @@
 <?php
 if (isset($_GET["ban"]) && isset($_POST["edit"]))
-	echo TextMgr::getText('verwarnung_ok', false, true, array($_POST["stufe"], $_POST["kommentar"]));
+{
+	//$query = "INSERT INTO account_verwarnung VALUES(";
+	echo TextMgr::getText('verwarnung_ok', false, true, array($_GET["guid"], $_POST["stufe"], $_POST["kommentar"]));
+}
 if (isset($_POST["send"]))
 {
 	$username = mysql_real_escape_string($_POST["name"]);
@@ -11,7 +14,7 @@ if (isset($_POST["send"]))
 		/* [0] = GUID */
 		echo TextMgr::getText('case_header', false, true, array($username));
 		echo "
-		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok'."\" method=\"post\" id=\"editacc\">
+		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$accdata[0].''."\" method=\"post\" id=\"editacc\">
 		<table cellspacing='0'>
 			<thead>
 				<tr>
