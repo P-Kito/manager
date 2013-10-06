@@ -27,7 +27,7 @@ class AccountMgr
 			$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
-		$wirkung = split(';', $text);
+		$wirkung = explode(';', $text);
 		while ($row = mysql_fetch_row($result))
 		{
 			$html .= "<tr>";
@@ -50,6 +50,26 @@ class AccountMgr
 			return(false);
 		else
 			return(true);
+	}
+
+	static function getLastVerwarnstufe($guid)
+	{
+		$query = "SELECT max(Verwarnstufe) FROM account_verwarnung WHERE ACCGUID = " . $guid;
+		$result = MySQLMgr::executeSingle($query, false);
+		return($result);
+	}
+
+	static function buildStufenSelect($lastStufe)
+	{
+		$html = "";
+		$text = TextMgr::getText('auswirkungen', false);
+		$wirkung = explode(';', $text);
+		
+		for ($i = $lastStufe+1; $i <= 5; $i++)
+		{
+			$html .= "<option value=\"\">  </option>";
+		}
+		return($html);
 	}
 	
 	static function checkExistGUID($guid)

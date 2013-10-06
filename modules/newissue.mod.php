@@ -29,6 +29,11 @@ if (isset($_POST["send"]))
 				<input type="text" name="guid" id="guid" value="<?php echo $accdata[0]; ?>" readonly="readonly" disabled="disabled" />
 				<img src="images/lock.gif"><label for="guid">Account GUID</label>
 			</p>
+			<p class="stufe">
+				<select name="stufe">
+					<?php echo AccountMgr::buildStufenSelect(AccountMgr::getLastVerwarnstufe($accdata[0])); ?>
+				</select>
+			</p>
 			<p class="submit">
 				<input type="submit" name="edit" value="<?php echo TextMgr::getText('account_edit', false); ?>" />  
 			</p> 
