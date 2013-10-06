@@ -4,7 +4,7 @@ if (isset($_GET["ban"]) && isset($_POST["edit"]))
 	$guid = mysql_real_escape_string($_GET["guid"]);
 	$kommentar = mysql_real_escape_string($_POST["kommentar"]);
 	$query = "INSERT INTO account_verwarnung VALUES(".$guid.", '', ".$_POST["stufe"].", '".$kommentar."', '".date("Y-m-d H:i:s")."', 0)";
-	MySQLMgr::executeUpdate($query, false);
+	$result = MySQLMgr::executeUpdate($query, false);
 	if ($result)
 		echo TextMgr::getText('verwarnung_ok', false, true, array($_GET["guid"], $_POST["stufe"], $_POST["kommentar"]));
 	else
