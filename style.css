@@ -322,7 +322,8 @@ textarea {
 }  
       
 input:hover, textarea:hover,  
-nput:focus, textarea:focus {   
+input:focus, textarea:focus,
+select:hover, select:focus {   
         border-color: #a4ff06;   
         -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
 }  
@@ -332,7 +333,7 @@ nput:focus, textarea:focus {
         color: #578803;
 }  
       
-.submit input {  
+input {  
         width: auto;  
         padding: 9px 15px;  
         background: #617798;  
