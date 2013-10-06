@@ -39,6 +39,8 @@ class AccountMgr
 		}
 		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+		if (!$full)
+			$html .= "<tr><td>*</td><td>". self::buildStufenSelect(self::getLastVerwarnstufe($guid)) ."</td><td>TEXTBOX KOMMT NOCH</td><td>".date()."</td></tr>";
 		return($html);
 	}
 	
