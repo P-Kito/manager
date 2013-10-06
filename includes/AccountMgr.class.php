@@ -40,7 +40,7 @@ class AccountMgr
 		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
 		if (!$full && self::getLastVerwarnstufe($guid) < 5)
-			$html .= "<tr><td>*</td><td>". self::buildStufenSelect(self::getLastVerwarnstufe($guid)) ."</td><td><textarea name=\"kommentar\" cols=\"10\" rows=\"5\" /></textarea></td><td>*</td></tr>";
+			$html .= "<tr><td>*</td><td>". self::buildStufenSelect(self::getLastVerwarnstufe($guid)) ."</td><td><textarea name=\"kommentar\" maxlength=\"255\"/></textarea></td><td>*</td></tr>";
 		return($html);
 	}
 	
