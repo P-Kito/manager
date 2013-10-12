@@ -26,7 +26,7 @@ if (isset($_POST["send"]))
 		";
 	}
 	else
-		echo TextMgr::getText('character_not_found', false);
+		echo TextMgr::getText('account_not_found', false);
 } elseif (isset($_GET["guid"]))
 {
 	$guid = mysql_real_escape_string($_GET["guid"]);
