@@ -102,6 +102,7 @@ class AccountMgr
 		}
 		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+		return($html);
 	}
 }
 ?>
