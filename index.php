@@ -10,7 +10,6 @@ require_once('includes/AccountMgr.class.php');
 
 MysqlMgr::connectDB(CONFIG::USERNAME, CONFIG::PASSWORD, CONFIG::HOSTNAME);
 
-// Kein GET Variable ist automatisch home
 if (isset($_GET["p"]))
 {
 $p = $_GET["p"];
