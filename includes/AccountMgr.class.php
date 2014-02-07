@@ -84,5 +84,24 @@ class AccountMgr
 		else
 			return(true);
 	}
+	
+	static function getLastTenBans()
+	{
+		$query = "SELECT ac.id, ac.username, av.verwarnstufe, av.kommentar, av.datum FROM account_verwarnung av INNER JOIN account ac ON av.accguid = ac.id ORDER BY Datum DESC";
+		$result = MySQLMgr::executeMulti($query, false);
+		$html = "";
+		while ($row = mysql_fetch_row($result))
+		{
+			$html .= "<tr>";
+			$html .= "<td>" . $row[0] . "</td>";
+			$html .= "<td>" . $row[1] . "</td>";
+			$html .= "<td>" . $row[2] . "</td>";
+			$html .= "<td>" . $row[3] . "</td>";
+			$html .= "<td>" . $row[4] . "</td>";
+			$html .= "</tr>";
+		}
+		if ($html == "") 
+			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+	}
 }
 ?>
