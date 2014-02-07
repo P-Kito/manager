@@ -8,7 +8,6 @@ echo TextMgr::getText('home_title', false);
 echo TextMgr::getText('home_info_lastbans', false);
 
 echo "
-<br />
 <table cellspacing='0'>
 	<thead>
 		<tr>

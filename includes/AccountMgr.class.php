@@ -87,6 +87,8 @@ class AccountMgr
 	
 	static function getLastTenBans()
 	{
+		$text = TextMgr::getText('auswirkungen', false);
+		$wirkung = explode(';', $text);
 		$query = "SELECT ac.id, ac.username, av.verwarnstufe, av.kommentar, av.datum FROM account_verwarnung av INNER JOIN account ac ON av.accguid = ac.id ORDER BY Datum DESC LIMIT 10";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "";
@@ -95,7 +97,7 @@ class AccountMgr
 			$html .= "<tr>";
 			$html .= "<td>" . $row[0] . "</td>";
 			$html .= "<td>" . $row[1] . "</td>";
-			$html .= "<td>" . $row[2] . "</td>";
+			$html .= "<td>" . $wirkung[$row[2]-1] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
 			$html .= "<td>" . $row[4] . "</td>";
 			$html .= "</tr>";
