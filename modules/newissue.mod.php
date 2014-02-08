@@ -1,6 +1,4 @@
 <?php
-if (!isset($_SESSION['login']))
-	echo TextMgr::getText('error_login', false);
 if (isset($_GET["ban"]) && isset($_POST["edit"]))
 {
 	$guid = mysql_real_escape_string($_GET["guid"]);
@@ -53,6 +51,11 @@ if (isset($_POST["send"]))
 echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
 ?>
+<?php
+if (!isset($_SESSION['login']))
+	echo TextMgr::getText('error_login', false);
+else {
+?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="searchacc">
     <p class="name">  
         <input type="text" name="name" id="name" />
@@ -63,5 +66,6 @@ echo TextMgr::getText('new_issue', false);
     </p> 
 </form>
 <?php
+}
 }
 ?>
