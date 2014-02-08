@@ -18,7 +18,7 @@ if (isset($_POST["send"]))
 			echo TextMgr::getText('login_success', false);
 			echo "<meta http-equiv=\"refresh\" content=\"0.5; URL=" . $_SERVER['PHP_SELF']."?p=home\">";
 			$_SESSION['login'] = true;
-			$_SESSION['rank'] = TextMgr::getText($accdata[2], false;
+			$_SESSION['rank'] = TextMgr::getText($accdata[2], false);
 			$_SESSION['username'] = $username;
 		}
 		else
