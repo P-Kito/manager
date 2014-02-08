@@ -1,4 +1,6 @@
 <?php
+if (!isset($_SESSION['login']))
+	echo TextMgr::getText('error_login', false);
 if (isset($_GET["ban"]) && isset($_POST["edit"]))
 {
 	$guid = mysql_real_escape_string($_GET["guid"]);
