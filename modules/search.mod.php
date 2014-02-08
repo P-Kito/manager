@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION['login']))
 {
-	echo TextMgr::getText('error_login', false);
+	echo TextMgr::getText('login_error', false);
 } else {
 if (isset($_POST["send"]))
 {

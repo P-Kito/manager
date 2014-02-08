@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['login']))
-	echo TextMgr::getText('error_login', false);
+	echo TextMgr::getText('login_error', false);
 else {
 $news = TextMgr::getText('wichtige_news', true);
 if ($news != "") echo "<h4>".$news."</h4>";

@@ -15,7 +15,7 @@ if (isset($_GET["ban"]) && isset($_POST["edit"]))
 
 if (!isset($_SESSION['login']))
 {
-	echo TextMgr::getText('error_login', false);
+	echo TextMgr::getText('login_error', false);
 } elseif (isset($_POST["send"]))
 {
 	$username = mysql_real_escape_string($_POST["name"]);
