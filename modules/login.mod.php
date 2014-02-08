@@ -15,7 +15,7 @@ if (isset($_POST["send"]))
 		 */
 		if ($password == $accdata[1])
 		{
-			echo 'login ok';
+			echo TextMgr::getText('login_success', false);
 		}
 	}
 }
