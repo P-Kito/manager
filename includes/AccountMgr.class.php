@@ -12,6 +12,12 @@ class AccountMgr
 		return(MySQLMgr::executeMulti($query, false));
 	}
 
+	static function fetchDataStramaAcc($username)
+	{
+		$query = "SELECT id, pass_hash, rank FROM account WHERE username='".$username."'";
+		return(MySQLMgr::executeMulti($query, true));
+	}
+	
 	static function fetchDataGUID($guid)
 	{
 		$query = "SELECT username FROM account WHERE id='".$guid."'";

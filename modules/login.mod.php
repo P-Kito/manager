@@ -6,12 +6,21 @@ if (isset($_POST["send"]))
 
 	if (AccountMgr::checkExistStramaAcc($username))
 	{
-		echo 'test';
+		$accdata = AccountMgr::fetchDataStramaAcc($username);
+		$accdata = mysql_fetch_array($accdata);
+		/*
+		 *  $accdata[0] = id
+		 *	$accdata[1] = passhash
+		 *	$accdata[2] = rank
+		 */
+		if ($password == $accdata[1])
+		{
+			echo 'login ok';
+		}
 	}
 }
 ?>
 <?php
-echo TextMgr::getText('login_header', false); 
 echo TextMgr::getText('login_menu', false);
 ?>
 
