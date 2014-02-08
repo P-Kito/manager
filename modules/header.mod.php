@@ -16,9 +16,20 @@
 <div id="menu">
 <div id='cssmenu'>
 <ul>
+<?php
+if (isset($_SESSION['login']))
+{
+?>
    <li <?php if ($p == "home") echo "class=\"active\""; ?>><a href='index.php?p=home'><span><?php echo TextMgr::getText('menu_home', false); ?></span></a></li>
    <li <?php if ($p == "newissue") echo "class=\"active\""; ?>><a href='index.php?p=newissue'><span><?php echo TextMgr::getText('menu_newissue', false); ?></span></a></li>
    <li <?php if ($p == "search") echo "class=\"active\""; ?>><a href='index.php?p=search'><span><?php echo TextMgr::getText('menu_search', false); ?></span></a></li>
+<?php
+} else {
+?>
+   <li <?php if ($p == "login") echo "class=\"active\""; ?>><a href='index.php?p=login'><span><?php echo TextMgr::getText('menu_login', false); ?></span></a></li>
+<?php
+}
+?>
 </ul>
 </div>
 </div>
