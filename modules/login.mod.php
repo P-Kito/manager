@@ -1,4 +1,16 @@
 <?php
+if (isset($_POST["send"]))
+{
+	$username = mysql_real_escape_string($_POST["name"]);
+	$password = sha1(mysql_real_escape_string($_POST["password"]));
+
+	if (AccountMgr::checkExistStramaAcc($username))
+	{
+		echo 'test';
+	}
+}
+?>
+<?php
 echo TextMgr::getText('login_header', false); 
 echo TextMgr::getText('login_menu', false);
 ?>

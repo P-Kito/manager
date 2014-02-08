@@ -54,6 +54,16 @@ class AccountMgr
 			return(true);
 	}
 
+	static function checkExistStramaAcc($username)
+	{
+		$query = "SELECT id FROM tbllogin WHERE username='".$username."'";
+		$result = MySQLMgr::executeSingle($query, true);
+		if (!$result)
+			return(false);
+		else
+			return(true);
+	}
+	
 	static function getLastVerwarnstufe($guid)
 	{
 		$query = "SELECT max(Verwarnstufe) FROM account_verwarnung WHERE ACCGUID = " . $guid;
