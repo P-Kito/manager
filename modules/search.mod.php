@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION['login']))
+{
+	echo TextMgr::getText('error_login', false);
+} else {
 if (isset($_POST["send"]))
 {
 	$username = mysql_real_escape_string($_POST["name"]);
@@ -69,5 +73,6 @@ echo TextMgr::getText('search_issue', false);
     </p> 
 </form>
 <?php
+}
 }
 ?>
