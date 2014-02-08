@@ -14,12 +14,11 @@ if (isset($_POST["send"]))
 		 *	$accdata[2] = rank
 		 */
 		if ($password == $accdata[1])
-		{
 			echo TextMgr::getText('login_success', false);
-		} else {
+		else
 			echo TextMgr::getText('login_failed', false);
-		}
-	}
+	} else
+		echo TextMgr::getText('login_failed', false);
 }
 ?>
 <?php
