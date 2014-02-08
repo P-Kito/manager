@@ -1,0 +1,18 @@
+<?php
+echo TextMgr::getText('login_header', false); 
+echo TextMgr::getText('login_menu', false);
+?>
+
+<form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=login'; ?>" method="post" id="login">
+    <p class="name">  
+        <input type="text" name="name" id="name" />
+        <label for="name"><?php echo TextMgr::getText('login_username', false); ?></label>
+    </p>
+    <p class="password">  
+        <input type="text" name="password" id="password" />
+        <label for="password"><?php echo TextMgr::getText('login_password', false); ?></label>
+    </p>
+    <p class="submit">  
+        <input type="submit" name="send" value="<?php echo TextMgr::getText('login_confirm', false); ?>" />  
+    </p> 
+</form>
