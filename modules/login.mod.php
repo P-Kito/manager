@@ -14,7 +14,10 @@ if (isset($_POST["send"]))
 		 *	$accdata[2] = rank
 		 */
 		if ($password == $accdata[1])
+		{
 			echo TextMgr::getText('login_success', false);
+			echo "<meta http-equiv=\"refresh\" content=\"0.5; URL=" . $_SERVER['PHP_SELF']."?p=home\">";
+		}
 		else
 			echo TextMgr::getText('login_failed', false);
 	} else
@@ -31,7 +34,7 @@ echo TextMgr::getText('login_menu', false);
         <label for="name"><?php echo TextMgr::getText('login_username', false); ?></label>
     </p>
     <p class="password">  
-        <input type="text" name="password" id="password" />
+        <input type="password" name="password" id="password" />
         <label for="password"><?php echo TextMgr::getText('login_password', false); ?></label>
     </p>
     <p class="submit">  
