@@ -12,7 +12,11 @@ if (isset($_GET["ban"]) && isset($_POST["edit"]))
 	else
 		echo TextMgr::getText('internal_error', false);
 }
-if (isset($_POST["send"]))
+
+if (!isset($_SESSION['login']))
+{
+	echo TextMgr::getText('error_login', false);
+} elseif (isset($_POST["send"]))
 {
 	$username = mysql_real_escape_string($_POST["name"]);
 	if (AccountMgr::checkExist($username))
@@ -51,11 +55,6 @@ if (isset($_POST["send"]))
 echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
 ?>
-<?php
-if (!isset($_SESSION['login']))
-	echo TextMgr::getText('error_login', false);
-else {
-?>
 <form class="form" action="<?php echo $_SERVER['PHP_SELF'].'?p=newissue'; ?>" method="post" id="searchacc">
     <p class="name">  
         <input type="text" name="name" id="name" />
@@ -66,6 +65,5 @@ else {
     </p> 
 </form>
 <?php
-}
 }
 ?>
