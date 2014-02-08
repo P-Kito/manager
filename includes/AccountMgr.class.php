@@ -14,7 +14,7 @@ class AccountMgr
 
 	static function fetchDataStramaAcc($username)
 	{
-		$query = "SELECT id, pass_hash, rank FROM account WHERE username='".$username."'";
+		$query = "SELECT id, pass_hash, rank FROM tbllogin WHERE username='".$username."'";
 		return(MySQLMgr::executeMulti($query, true));
 	}
 	
