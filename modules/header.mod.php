@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>StraMa Laenalith</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!--[if gte IE 5.5]>
     <style type="text/css">@import url(ie.css);</style>
