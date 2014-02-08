@@ -11,15 +11,13 @@ require_once('includes/AccountMgr.class.php');
 MysqlMgr::connectDB(CONFIG::USERNAME, CONFIG::PASSWORD, CONFIG::HOSTNAME);
 
 if (isset($_GET["p"]))
-{
-$p = $_GET["p"];
-} else {
-$p = "home";
-}
+	$p = $_GET["p"];
+else
+	$p = "home";
 ?>
 
 <?php
-include('modules/header.mod.php');
+require_once('modules/header.mod.php');
 echo StyleMgr::loadPage($p);
-include('modules/footer.mod.php');
+require_once('modules/footer.mod.php');
 ?>
