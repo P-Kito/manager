@@ -85,13 +85,23 @@ class AccountMgr
 			return(true);
 	}
 	
-	static function getLastTenBans()
+	static function getLastTenBansAsTable()
 	{
 		$text = TextMgr::getText('auswirkungen', false);
 		$wirkung = explode(';', $text);
 		$query = "SELECT ac.id, ac.username, av.verwarnstufe, av.kommentar, av.datum FROM account_verwarnung av INNER JOIN account ac ON av.accguid = ac.id ORDER BY Datum DESC LIMIT 10";
 		$result = MySQLMgr::executeMulti($query, false);
-		$html = "";
+		$html = "<table cellspacing='0'>
+				<thead>
+					<tr>
+						<th>Account ID</th>
+						<th>Name</th>
+						<th>Verwarnstufe</th>
+						<th>Kommentar</th>
+						<th>Datum</th>
+					</tr>
+				</thead>
+				<tbody>";
 		while ($row = mysql_fetch_row($result))
 		{
 			$html .= "<tr>";
@@ -104,6 +114,8 @@ class AccountMgr
 		}
 		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+		$html .= "</tbody>
+				</table>";
 		return($html);
 	}
 }
