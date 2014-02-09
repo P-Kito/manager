@@ -20,6 +20,7 @@ if (isset($_POST["send"]))
 			$_SESSION['login'] = true;
 			$_SESSION['rank'] = TextMgr::getText($accdata[2], false);
 			$_SESSION['username'] = ucfirst($username);
+			$_SESSION['id'] = $accdata[0];
 		}
 		else
 			echo TextMgr::getText('login_failed', false);
