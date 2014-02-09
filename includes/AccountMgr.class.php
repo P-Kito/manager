@@ -125,15 +125,16 @@ class AccountMgr
 	{
 		$text = TextMgr::getText('auswirkungen', false);
 		$wirkung = explode(';', $text);
-		$query = "SELECT ac.id, ac.username, av.verwarnstufe, av.kommentar, av.datum FROM account_verwarnung av INNER JOIN account ac ON av.accguid = ac.id ORDER BY Datum DESC LIMIT 10";
+		$query = "SELECT ac.id, ac.username, av.verwarnstufe, av.kommentar, av.creator, av.datum FROM account_verwarnung av INNER JOIN account ac ON av.accguid = ac.id ORDER BY Datum DESC LIMIT 10";
 		$result = MySQLMgr::executeMulti($query, false);
 		$html = "<table cellspacing='0'>
 				<thead>
 					<tr>
 						<th>Account ID</th>
-						<th>Name</th>
+						<th>Accountname</th>
 						<th>Verwarnstufe</th>
 						<th>Kommentar</th>
+						<th>Ersteller</th>
 						<th>Datum</th>
 					</tr>
 				</thead>
@@ -146,6 +147,7 @@ class AccountMgr
 			$html .= "<td>" . $wirkung[$row[2]-1] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
 			$html .= "<td>" . $row[4] . "</td>";
+			$html .= "<td>" . $row[5] . "</td>";
 			$html .= "</tr>";
 		}
 		if ($html == "") 
