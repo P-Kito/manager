@@ -313,9 +313,9 @@ input, textarea, select {
 }  
       
 textarea {   
-        width: 400px;  
-        max-width: 400px;
-		min-width: 400px;
+        width: 360px;  
+        max-width: 360px;
+		min-width: 360px;
         height: 80px;
 		max-height: 80px;
 		min-height: 80px;

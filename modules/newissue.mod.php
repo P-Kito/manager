@@ -28,7 +28,7 @@ if (!isset($_SESSION['login']))
 		echo "
 		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$accdata[0].''."\" method=\"post\" id=\"editacc\">
 		".AccountMgr::getHistory($accdata[0])
-		.TextMgr::getText('info_verwarnungen', false)."
+		 .TextMgr::getText('info_verwarnungen', false)."
 		<br />";
 ?>
 			<p class="submit">
