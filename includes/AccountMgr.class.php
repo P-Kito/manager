@@ -52,7 +52,7 @@ class AccountMgr
 			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 			$html .= "<td>" . $row[2] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
-			$html .= "<td><font color=\"".TextMgr::getText($_SESSION['rank'], false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
+			$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 			$html .= "</tr>";
 		}
 		if ($html == "") 
