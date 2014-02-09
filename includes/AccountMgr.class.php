@@ -146,7 +146,7 @@ class AccountMgr
 			$html .= "<td>" . $row[1] . "</td>";
 			$html .= "<td>" . $wirkung[$row[2]-1] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
-			$html .= "<td>" . $row[4] . "</td>";
+			$html .= "<td>" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</td>";
 			$html .= "<td>" . $row[5] . "</td>";
 			$html .= "</tr>";
 		}
