@@ -389,7 +389,7 @@ table th {
 }
 table th:first-child {
 	text-align: left;
-	padding-left:18px;
+	padding-left:17px;
 }
 table tr:first-child th:first-child {
 	-moz-border-radius-topleft:3px;
@@ -403,11 +403,11 @@ table tr:first-child th:last-child {
 }
 table tr {
 	text-align: center;
-	padding-left:17px;
+	padding-left:16px;
 }
 table td:first-child {
 	text-align: left;
-	padding-left:18px;
+	padding-left:17px;
 	border-left: 0;
 }
 table td {
