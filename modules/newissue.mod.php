@@ -27,20 +27,8 @@ if (!isset($_SESSION['login']))
 		echo TextMgr::getText('case_header', false, true, array($username));
 		echo "
 		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$accdata[0].''."\" method=\"post\" id=\"editacc\">
-		<table cellspacing='0'>
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Verwarnstufe</th>
-					<th>Kommentar</th>
-					<th>Datum</th>
-				</tr>
-			</thead>
-			<tbody>
-			".AccountMgr::getHistory($accdata[0])."
-			</tbody>
-		</table>
-		".TextMgr::getText('info_verwarnungen', false)."
+		".AccountMgr::getHistory($accdata[0])
+		.TextMgr::getText('info_verwarnungen', false)."
 		<br />";
 ?>
 			<p class="submit">
