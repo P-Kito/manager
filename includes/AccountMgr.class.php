@@ -30,9 +30,20 @@ class AccountMgr
 		if ($full)
 			$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' ORDER BY id";
 		else
-			$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
+			$query = "SELECT id, verwarnstufe, kommentar, datum, creator FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
-		$html = "";
+		$html = "
+		<table cellspacing='0'>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Verwarnstufe</th>
+					<th>Kommentar</th>
+					<th>Datum</th>
+					<th>Ersteller</th>
+				</tr>
+			</thead>
+			<tbody>";
 		$wirkung = explode(';', $text);
 		while ($row = mysql_fetch_row($result))
 		{
@@ -41,12 +52,14 @@ class AccountMgr
 			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 			$html .= "<td>" . $row[2] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
+			$html .= "<td>" . $row[4] . "</td>";
 			$html .= "</tr>";
 		}
 		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
 		if (!$full && self::getLastVerwarnstufe($guid) < 5)
 			$html .= "<tr><td>*</td><td>". self::buildStufenSelect(self::getLastVerwarnstufe($guid)) ."</td><td><textarea name=\"kommentar\" maxlength=\"255\"/></textarea></td><td>*</td></tr>";
+		$html .= "</tbody></table>";
 		return($html);
 	}
 	
