@@ -1,6 +1,6 @@
 <?php
 session_start();
-//ini_set( 'error_reporting', E_ALL ^ E_NOTICE );
+ini_set( 'error_reporting', E_ALL ^ E_NOTICE );
 
 require_once('conf/site.conf.php');
 require_once('includes/MySQLMgr.class.php');
