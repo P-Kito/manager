@@ -142,11 +142,6 @@ background:url(images/bg.png) repeat-x top left;
 text-decoration:none;
 }
 
-#menurechts {
-float: right;
-overflow:hidden;
-}
-
 #cssmenu .active a {
 color:#fff;
 font-weight:700;
@@ -223,24 +218,8 @@ text-transform: uppercase;
 color: #333;
 background: transparent;
 }
-	  
+ 
 .odd {background: #fafafa;}
-
-#intropic2 {
-margin-left: 20px;
-  -moz-transform:rotate(5deg);
-  -webkit-transform:rotate(5deg);
-  -o-transform:rotate(5deg);
-  transform:rotate(5deg);
-}
-
-#intropic1 {
-margin-left: 20px;
-  -moz-transform:rotate(-5deg);
-  -webkit-transform:rotate(-5deg);
-  -o-transform:rotate(-5deg);
-  transform:rotate(-5deg);
-}
 
 blockquote {
 font-family: Georgia, serif;
