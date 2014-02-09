@@ -146,7 +146,7 @@ class AccountMgr
 			$html .= "<td>" . $row[1] . "</td>";
 			$html .= "<td>" . $wirkung[$row[2]-1] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
-			$html .= "<td><font color=\"".TextMgr::getText($_SESSION['rank'], false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
+			$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 			$html .= "<td>" . $row[5] . "</td>";
 			$html .= "</tr>";
 		}
@@ -155,6 +155,13 @@ class AccountMgr
 		$html .= "</tbody>
 				</table>";
 		return($html);
+	}
+	
+	static function getStramaAccRank($id)
+	{
+		$query = "SELECT rank FROM tbllogin WHERE id=".$id."";
+		$result = MySQLMgr::executeSingle($query, true);
+		return($result);
 	}
 }
 ?>
