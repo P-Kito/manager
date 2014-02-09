@@ -28,7 +28,7 @@ class AccountMgr
 	{
 		$text = TextMgr::getText('auswirkungen', false);
 		if ($full)
-			$query = "SELECT id, verwarnstufe, kommentar, datum FROM account_verwarnung WHERE ACCGUID='".$guid."' ORDER BY id";
+			$query = "SELECT id, verwarnstufe, kommentar, datum, creator FROM account_verwarnung WHERE ACCGUID='".$guid."' ORDER BY id";
 		else
 			$query = "SELECT id, verwarnstufe, kommentar, datum, creator FROM account_verwarnung WHERE ACCGUID='".$guid."' AND datum >= now()-interval 6 month ORDER BY id";
 		$result = MySQLMgr::executeMulti($query, false);
@@ -52,7 +52,7 @@ class AccountMgr
 			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 			$html .= "<td>" . $row[2] . "</td>";
 			$html .= "<td>" . $row[3] . "</td>";
-			$html .= "<td>" . $row[4] . "</td>";
+			$html .= "<td>" . self::getUsernameByStramaAccID($row[4]) . "</td>";
 			$html .= "</tr>";
 		}
 		if ($html == "") 
@@ -112,6 +112,13 @@ class AccountMgr
 			return(false);
 		else
 			return(true);
+	}
+	
+	static function getUsernameByStramaAccID($id)
+	{
+		$query = "SELECT username FROM tbllogin WHERE id='".$id."'";
+		$result = MySQLMgr::executeSingle($query, true);
+		return($result);
 	}
 	
 	static function getLastTenBansAsTable()
