@@ -58,7 +58,7 @@ class AccountMgr
 				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 				$html .= "</tr>";
 			} else {
-				$html .= "<tr style=\"background-image: url('images/warning.gif');\">";
+				$html .= "<tr class=\"top\">";
 				$html .= "<td>". $row[0] . "</td>";
 				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 				$html .= "<td>" . $row[2] . "</td>";
