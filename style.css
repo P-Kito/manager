@@ -298,7 +298,8 @@ textarea {
 		max-height: 70px;
 		min-height: 70px;
         line-height: 150%;
-		padding: 4px;		
+		padding: 4px;
+		border: solid 1px #4c7603; 		
 }  
       
 input:hover, textarea:hover,  
