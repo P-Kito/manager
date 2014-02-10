@@ -59,7 +59,7 @@ class AccountMgr
 				$html .= "</tr>";
 			} else {
 				$html .= "<tr>";
-				$html .= "<td><img src=\"images/warning.gif\">" . $row[0] . "</td>";
+				$html .= "<td><img src=\"images/warning.gif\"></td>";
 				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 				$html .= "<td>" . $row[2] . "</td>";
 				$html .= "<td>" . $row[3] . "</td>";
