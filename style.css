@@ -386,7 +386,7 @@ table tr {
 }
 
 table tr .alt {
-	background: red;
+	background-color: red; !important
 }
 
 table td:first-child {
