@@ -386,9 +386,7 @@ table tr {
 }
 
 table td.warn { 
-		border-image:url(images/warning.gif) 30 30 round;
-		-webkit-border-image:url(images/warning.gif) 30 30 round; /* Safari 5 and older */
-		-o-border-image:url(images/warning.gif) 30 30 round; /* Opera */
+	border: 1px red dotted;
 	}
 
 table td:first-child {

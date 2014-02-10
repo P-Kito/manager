@@ -60,10 +60,10 @@ class AccountMgr
 			} else {
 				$html .= "<tr>";
 				$html .= "<td class=\"warn\">". $row[0] . "</td>";
-				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
-				$html .= "<td>" . $row[2] . "</td>";
-				$html .= "<td>" . $row[3] . "</td>";
-				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
+				$html .= "<td class=\"warn\">" . $wirkung[$row[1]-1] . "</td>";
+				$html .= "<td class=\"warn\">" . $row[2] . "</td>";
+				$html .= "<td class=\"warn\">" . $row[3] . "</td>";
+				$html .= "<td class=\"warn\"><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 				$html .= "</tr>";			
 			}
 		}
