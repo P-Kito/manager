@@ -13,7 +13,7 @@ if (isset($_POST["send"]))
 		/* [0] = GUID */
 		echo "<meta http-equiv=\"refresh\" content=\"0.5; URL=" . $_SERVER['PHP_SELF'].'?p=search&guid=' . $accdata[0] ."\">";
 		echo TextMgr::getText('case_header_search', false, true, array($username));
-		echo AccountMgr::getHistory($accdata[0], true);
+		echo AccountMgr::getHistory($accdata[0]);
 	}
 	else
 		echo TextMgr::getText('account_not_found', false);
@@ -26,7 +26,7 @@ if (isset($_POST["send"]))
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = USERNAME */
 		echo TextMgr::getText('case_header_search', false, true, array($accdata[0]));
-		echo AccountMgr::getHistory($guid, true);
+		echo AccountMgr::getHistory($guid);
 	}
 	else
 		echo TextMgr::getText('character_not_found', false);

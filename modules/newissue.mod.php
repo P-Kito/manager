@@ -50,7 +50,7 @@ if (!isset($_SESSION['login']))
 		echo TextMgr::getText('case_header', false, true, array($accdata[0]));
 		echo "
 		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$guid.''."\" method=\"post\" id=\"editacc\">
-		".AccountMgr::getHistory($guid, true);
+		".AccountMgr::getHistory($guid);
 		echo "<p class=\"submit\">
 				<input type=\"submit\" name=\"edit\" value=\"".TextMgr::getText('account_edit', false)."\" />  
 			</p> 
