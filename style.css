@@ -277,11 +277,11 @@ padding: 0.25em 40px;
 }
 
 input, textarea, select {   
-        padding: 7px;  
+        padding: 4px;  
         border: solid 1px #4c7603;  
         outline: 0;  
         font: normal 13px/100% Verdana, Tahoma, sans-serif;  
-        width: 180px;  
+        width: 195px;  
         background: #FFFFFF url('bg_form.png') left top repeat-x;  
         background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
         background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
@@ -291,14 +291,14 @@ input, textarea, select {
 }  
       
 textarea {   
-        width: 350px;  
-        max-width: 350px;
-		min-width: 350px;
-        height: 80px;
-		max-height: 80px;
-		min-height: 80px;
+        width: 340px;  
+        max-width: 340px;
+		min-width: 340px;
+        height: 70px;
+		max-height: 70px;
+		min-height: 70px;
         line-height: 150%;
-		padding: 7px;		
+		padding: 4px;		
 }  
       
 input:hover, textarea:hover,  
