@@ -386,7 +386,7 @@ table tr {
 }
 
 table td.warn { 
-	border: 1px red dotted;
+	border: 1px red;
 	}
 
 table td:first-child {
