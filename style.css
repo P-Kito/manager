@@ -385,13 +385,9 @@ table tr {
 	padding-left:16px;
 }
 
-table td.warn { 
-	border: 1px red double;
-	}
-
 table td.info {
 	padding: 1px;
-	width: 18px;
+	border: 1px red dotted;
 }
 
 table td:first-child {
