@@ -386,7 +386,7 @@ table tr {
 }
 
 table td.top { 
-	background: url('images/warning.png');
+	border: 2px red dotted;
 	}
 
 table td:first-child {
