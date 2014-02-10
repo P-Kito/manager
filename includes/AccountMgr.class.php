@@ -58,11 +58,11 @@ class AccountMgr
 				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 				$html .= "</tr>";
 			} else {
-				$html .= "<tr>!";
+				$html .= "<tr>";
 				$html .= "<td>!" . $row[0] . "</td>";
-				$html .= "<td>!" . $wirkung[$row[1]-1] . "</td>";
-				$html .= "<td>!" . $row[2] . "</td>";
-				$html .= "<td>!" . $row[3] . "</td>";
+				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
+				$html .= "<td>" . $row[2] . "</td>";
+				$html .= "<td>" . $row[3] . "</td>";
 				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 				$html .= "</tr>";			
 			}
@@ -97,7 +97,7 @@ class AccountMgr
 	
 	static function getLastVerwarnstufe($guid)
 	{
-		$query = "SELECT max(Verwarnstufe) FROM account_verwarnung WHERE ACCGUID = " . $guid;
+		$query = "SELECT max(Verwarnstufe) FROM account_verwarnung WHERE ACCGUID = " . $guid . " AND datum >= now()-interval 6 month";
 		$result = MySQLMgr::executeSingle($query, false);
 		return($result);
 	}
