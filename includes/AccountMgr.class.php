@@ -24,7 +24,7 @@ class AccountMgr
 		return(MySQLMgr::executeMulti($query, false));
 	}
 	
-	static function getHistory($guid, $full = false)
+	static function getHistory($guid, $full = true)
 	{
 		$text = TextMgr::getText('auswirkungen', false);
 		if ($full)
@@ -47,13 +47,25 @@ class AccountMgr
 		$wirkung = explode(';', $text);
 		while ($row = mysql_fetch_row($result))
 		{
-			$html .= "<tr>";
-			$html .= "<td>" . $row[0] . "</td>";
-			$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
-			$html .= "<td>" . $row[2] . "</td>";
-			$html .= "<td>" . $row[3] . "</td>";
-			$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
-			$html .= "</tr>";
+			$date = date('Y-m-d H:i:s', strtotime($row[3]));
+			if ($date >= date('Y-m-d H:i:s', time() - 15778463 /* 6 Monate */))
+			{
+				$html .= "<tr>";
+				$html .= "<td>" . $row[0] . "</td>";
+				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
+				$html .= "<td>" . $row[2] . "</td>";
+				$html .= "<td>" . $row[3] . "</td>";
+				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
+				$html .= "</tr>";
+			} else {
+				$html .= "<tr bgcolor=\"red\">";
+				$html .= "<td>" . $row[0] . "</td>";
+				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
+				$html .= "<td>" . $row[2] . "</td>";
+				$html .= "<td>" . $row[3] . "</td>";
+				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
+				$html .= "</tr>";			
+			}
 		}
 		if ($html == "") 
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
