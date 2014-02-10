@@ -10,7 +10,7 @@ if (isset($_GET["ban"]) && isset($_POST["edit"]))
 	if ($result)
 		echo TextMgr::getText('verwarnung_ok', false, true, array($guid, $_POST["stufe"], $kommentar));
 	else
-		echo TextMgr::getText('internal_error', false);
+		echo TextMgr::getText('ban_max_already', false);
 }
 
 if (!isset($_SESSION['login']))
