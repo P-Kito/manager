@@ -45,7 +45,6 @@ margin-right: auto;
 text-align: left;
 border: 1px solid grey;
 background-color: white;
-
 }
 
 #box-dashed {
@@ -278,11 +277,11 @@ padding: 0.25em 40px;
 }
 
 input, textarea, select {   
-        padding: 9px;  
+        padding: 7px;  
         border: solid 1px #4c7603;  
         outline: 0;  
         font: normal 13px/100% Verdana, Tahoma, sans-serif;  
-        width: 200px;  
+        width: 180px;  
         background: #FFFFFF url('bg_form.png') left top repeat-x;  
         background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
         background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
@@ -292,14 +291,14 @@ input, textarea, select {
 }  
       
 textarea {   
-        width: 360px;  
-        max-width: 360px;
-		min-width: 360px;
+        width: 350px;  
+        max-width: 350px;
+		min-width: 350px;
         height: 80px;
 		max-height: 80px;
 		min-height: 80px;
         line-height: 150%;
-		padding: 9px;		
+		padding: 7px;		
 }  
       
 input:hover, textarea:hover,  
@@ -383,11 +382,6 @@ table tr:first-child th:last-child {
 table tr {
 	text-align: center;
 	padding-left:16px;
-}
-
-table td.info {
-	padding: 1px;
-	border: 1px red dotted;
 }
 
 table td:first-child {
