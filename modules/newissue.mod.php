@@ -39,7 +39,7 @@ if (!isset($_SESSION['login']))
 	}
 	else
 		echo TextMgr::getText('account_not_found', false);
-}
+} else {
 echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
 ?>
@@ -52,3 +52,6 @@ echo TextMgr::getText('new_issue', false);
         <input type="submit" name="send" value="<?php echo TextMgr::getText('account_search', false); ?>" />  
     </p> 
 </form>
+<?php
+}
+?>
