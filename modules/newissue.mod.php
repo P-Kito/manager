@@ -39,6 +39,19 @@ if (!isset($_SESSION['login']))
 	}
 	else
 		echo TextMgr::getText('account_not_found', false);
+} elseif (isset($_GET["guid"]))
+{
+	$guid = mysql_real_escape_string($_GET["guid"]);
+	if (AccountMgr::checkExistGUID($guid))
+	{
+		$accdata = AccountMgr::fetchDataGUID($guid);
+		$accdata = mysql_fetch_array($accdata);
+		/* [0] = USERNAME */
+		echo TextMgr::getText('case_header', false, true, array($accdata[0]));
+		echo AccountMgr::getHistory($guid, true);
+	}
+	else
+		echo TextMgr::getText('character_not_found', false);
 } else {
 echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
