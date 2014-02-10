@@ -48,7 +48,13 @@ if (!isset($_SESSION['login']))
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = USERNAME */
 		echo TextMgr::getText('case_header', false, true, array($accdata[0]));
-		echo AccountMgr::getHistory($guid, true);
+		echo "
+		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$guid.''."\" method=\"post\" id=\"editacc\">
+		".AccountMgr::getHistory($guid, true);
+		echo "<p class=\"submit\">
+				<input type=\"submit\" name=\"edit\" value=\"".TextMgr::getText('account_edit', false)."\" />  
+			</p> 
+		</form>";
 	}
 	else
 		echo TextMgr::getText('character_not_found', false);
