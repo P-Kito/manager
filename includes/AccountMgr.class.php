@@ -53,7 +53,7 @@ class AccountMgr
 			{
 				$html .= "<tr>";
 				$html .= "<td>" . $row[0] . "</td>";
-				$html .= "<td></td>";
+				$html .= "<td class=\"info\"></td>";
 				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 				$html .= "<td>" . $row[2] . "</td>";
 				$html .= "<td>" . $row[3] . "</td>";
@@ -62,7 +62,7 @@ class AccountMgr
 			} else {
 				$html .= "<tr>";
 				$html .= "<td class=\"warn\">" . $row[0] . "</td>";
-				$html .= "<td><img src=\"images/warning.gif\"></td>";
+				$html .= "<td class=\"info\"><img src=\"images/warning.gif\"></td>";
 				$html .= "<td class=\"warn\">" . $wirkung[$row[1]-1] . "</td>";
 				$html .= "<td class=\"warn\">" . $row[2] . "</td>";
 				$html .= "<td class=\"warn\">" . $row[3] . "</td>";

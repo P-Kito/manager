@@ -389,6 +389,11 @@ table td.warn {
 	border: 1px red double;
 	}
 
+table td.info {
+	padding: 1px;
+	width: 18px;
+}
+
 table td:first-child {
 	text-align: left;
 	padding-left:17px;
