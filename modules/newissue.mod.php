@@ -40,7 +40,8 @@ if (!isset($_SESSION['login']))
 		echo "
 		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$guid.''."\" method=\"post\" id=\"editacc\">
 		".AccountMgr::getHistory($guid)
-		 .TextMgr::getText('info_verwarnungen', false);
+		.TextMgr::getText('warn_legend', false)
+		.TextMgr::getText('info_verwarnungen', false);
 		echo "<p class=\"submit\">
 				<input type=\"submit\" name=\"edit\" value=\"".TextMgr::getText('account_edit', false)."\" />  
 			</p> 
