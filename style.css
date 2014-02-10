@@ -291,9 +291,9 @@ input, textarea, select {
 }  
       
 textarea {   
-        width: 340px;  
-        max-width: 340px;
-		min-width: 340px;
+        width: 325px;  
+        max-width: 325px;
+		min-width: 325px;
         height: 70px;
 		max-height: 70px;
 		min-height: 70px;
