@@ -166,7 +166,7 @@ class AccountMgr
 			$html .= "</tr>";
 		}
 		if (!strpos($html, '<td>'))
-			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
 		$html .= "</tbody>
 				</table>";
 		return($html);
