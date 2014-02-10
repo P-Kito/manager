@@ -165,7 +165,7 @@ class AccountMgr
 			$html .= "<td>" . $row[5] . "</td>";
 			$html .= "</tr>";
 		}
-		if ($html == "") 
+		if (!strpos($html, '<td>'))
 			$html .= "<tr><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
 		$html .= "</tbody>
 				</table>";
