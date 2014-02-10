@@ -53,7 +53,7 @@ class AccountMgr
 			{
 				$html .= "<tr>";
 				$html .= "<td>" . $row[0] . "</td>";
-				$html .= "<td class=\"info\"></td>";
+				$html .= "<td></td>";
 				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 				$html .= "<td>" . $row[2] . "</td>";
 				$html .= "<td>" . $row[3] . "</td>";
