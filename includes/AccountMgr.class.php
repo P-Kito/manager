@@ -58,13 +58,13 @@ class AccountMgr
 				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
 				$html .= "</tr>";
 			} else {
-				$html .= "<div class=\"warn\"><tr>";
+				$html .= "<tr><div class=\"warn\">";
 				$html .= "<td>". $row[0] . "</td>";
 				$html .= "<td>" . $wirkung[$row[1]-1] . "</td>";
 				$html .= "<td>" . $row[2] . "</td>";
 				$html .= "<td>" . $row[3] . "</td>";
 				$html .= "<td><font color=\"".TextMgr::getText(self::getStramaAccRank($row[4]), false)."\">" . ucfirst(self::getUsernameByStramaAccID($row[4])) . "</font></td>";
-				$html .= "</tr></div>";			
+				$html .= "</div></tr>";			
 			}
 		}
 		if ($html == "") 
