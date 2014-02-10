@@ -24,19 +24,7 @@ if (!isset($_SESSION['login']))
 		$accdata = AccountMgr::fetchData($username);
 		$accdata = mysql_fetch_array($accdata);
 		/* [0] = GUID */
-		echo "<meta http-equiv=\"refresh\" content=\"0.5; URL=" . $_SERVER['PHP_SELF'].'?p=newissue&guid=' . $accdata[0] ."\">";
-		echo TextMgr::getText('case_header', false, true, array($username));
-		echo "
-		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$accdata[0].''."\" method=\"post\" id=\"editacc\">
-		".AccountMgr::getHistory($accdata[0])
-		 .TextMgr::getText('info_verwarnungen', false)."
-		<br />";
-?>
-			<p class="submit">
-				<input type="submit" name="edit" value="<?php echo TextMgr::getText('account_edit', false); ?>" />  
-			</p> 
-		</form>
-<?php		
+		echo "<meta http-equiv=\"refresh\" content=\"0.5; URL=" . $_SERVER['PHP_SELF'].'?p=newissue&guid=' . $accdata[0] ."\">";	
 	}
 	else
 		echo TextMgr::getText('account_not_found', false);
@@ -51,7 +39,8 @@ if (!isset($_SESSION['login']))
 		echo TextMgr::getText('case_header', false, true, array($accdata[0]));
 		echo "
 		<form class=\"form\" action=\"".$_SERVER['PHP_SELF'].'?p=newissue&ban=ok&guid='.$guid.''."\" method=\"post\" id=\"editacc\">
-		".AccountMgr::getHistory($guid);
+		".AccountMgr::getHistory($guid)
+		 .TextMgr::getText('info_verwarnungen', false);
 		echo "<p class=\"submit\">
 				<input type=\"submit\" name=\"edit\" value=\"".TextMgr::getText('account_edit', false)."\" />  
 			</p> 
