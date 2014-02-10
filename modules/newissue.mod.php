@@ -52,6 +52,3 @@ echo TextMgr::getText('new_issue', false);
         <input type="submit" name="send" value="<?php echo TextMgr::getText('account_search', false); ?>" />  
     </p> 
 </form>
-<?php
-}
-?>
