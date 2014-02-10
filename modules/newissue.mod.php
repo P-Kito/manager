@@ -39,7 +39,7 @@ if (!isset($_SESSION['login']))
 	}
 	else
 		echo TextMgr::getText('account_not_found', false);
-} else {
+}
 echo TextMgr::getText('titel_newissue', false);
 echo TextMgr::getText('new_issue', false);
 ?>
